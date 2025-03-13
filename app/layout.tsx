@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import {ScrollArea} from '@/app/components/ui/scroll-area'
-import { MenubarDemo } from "./components/layouts/header";
+import { MenubarDemo } from "./components/layouts/MenuList";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,8 +25,8 @@ export default function RootLayout({
           />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-svh`}>
-        <ScrollArea className="dark:text-white bg-[#000] text-white  h-full">
-          <div>
+        <ScrollArea className="dark:text-white bg-[--main-bg] text-white  h-full">
+          <div className="px-[15px] py-[30px]">
           <MenubarDemo/>
             {children}
           </div>

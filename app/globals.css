@@ -82,6 +82,7 @@
 }
 
 .dark {
+  --main-bg:#28333F;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -141,4 +142,10 @@
 
 .animate-shake {
   animation: shake 0.2s ease-in-out;
+}
+.card {
+  gap: 7px;
+  border-radius: 10px;
+  padding: 8px 30px;
+  background: #32363C;
 }
