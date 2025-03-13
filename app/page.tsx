@@ -7,17 +7,19 @@ export default function Home() {
     const [error2,setError2] = useState<any>()
     useEffect(() => {
       // @ts-ignore
-        if (typeof window !== "undefined" && window?.Telegram?.WebApp) {
+        if (WebApp.initDataUnsafe.user) {
           // @ts-ignore
-            const tg = window?.Telegram.WebApp;
-            tg.expand(); // Mini App’ni to‘liq ekran qilish
+          setUser(WebApp.initDataUnsafe.user)
+          // // @ts-ignore
+          //   const tg = window?.Telegram.WebApp;
+          //   tg.expand(); // Mini App’ni to‘liq ekran qilish
 
-            if (tg.initDataUnsafe?.user) {
-                setUser(tg.initDataUnsafe.user);
-            }
-            else {
-              setError2('topilmadi 2')
-            }
+          //   if (tg.initDataUnsafe?.user) {
+          //       setUser(tg.initDataUnsafe.user);
+          //   }
+          //   else {
+          //     setError2('topilmadi 2')
+          //   }
         }
         else {
           setError1('topilmadi')
@@ -27,15 +29,9 @@ export default function Home() {
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
             <h1>Telegram User Info</h1>
-            {user ? (
-                <div>
-                    <p><strong>ID:</strong> {user.id}</p>
-                    <p><strong>Username:</strong> {user.username || "No username"}</p>
-                    <p><strong>First Name:</strong> {user.first_name}</p>
-                </div>
-            ) : (
+            {user ? JSON.stringify(user) : 
                 <p>Foydalanuvchi ma’lumotlari yuklanmoqda...</p>
-            )}
+            }
             <hr />
             {JSON.stringify(error1)}
             <hr />
