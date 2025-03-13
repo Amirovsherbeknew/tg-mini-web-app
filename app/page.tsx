@@ -2,8 +2,9 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [user, setUser] = useState<{ id: number; username?: string; first_name: string } | null>(null);
-
+    const [user, setUser] = useState<any>(null);
+    const [error1,setError1] = useState<any>()
+    const [error2,setError2] = useState<any>()
     useEffect(() => {
       // @ts-ignore
         if (typeof window !== "undefined" && window?.Telegram?.WebApp) {
@@ -14,6 +15,12 @@ export default function Home() {
             if (tg.initDataUnsafe?.user) {
                 setUser(tg.initDataUnsafe.user);
             }
+            else {
+              setError2('topilmadi 2')
+            }
+        }
+        else {
+          setError1('topilmadi')
         }
     }, []);
 
@@ -29,6 +36,10 @@ export default function Home() {
             ) : (
                 <p>Foydalanuvchi ma’lumotlari yuklanmoqda...</p>
             )}
+            <hr />
+            {JSON.stringify(error1)}
+            <hr />
+            {JSON.stringify(error2)}
         </div>
     );
 }
