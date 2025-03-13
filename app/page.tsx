@@ -1,5 +1,5 @@
 'use client';
-
+import HomeView from "./components/views/home/Home";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -23,23 +23,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>Telegram User Info</h1>
-      {user ? (
-        
-        <div>
-          <pre>{JSON.stringify(user)}</pre>
-          <p><strong>ID:</strong> {user.id}</p>
-          <p><strong>Username:</strong> {user.username || "No username"}</p>
-          <p><strong>First Name:</strong> {user.first_name}</p>
-        </div>
-      ) : (
-        <p>Foydalanuvchi maʼlumotlari yuklanmoqda...</p>
-      )}
-      <hr />
-      {error1 && <p>Xato 1: {error1}</p>}
-      <hr />
-      {error2 && <p>Xato 2: {error2}</p>}
+    <div>
+      <HomeView/>
     </div>
   );
 }
