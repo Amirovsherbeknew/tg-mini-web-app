@@ -1,7 +1,5 @@
-'use client'
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script"; // ✅ Next.js uchun Script komponenti
-import { useEffect, useState } from "react"; // ✅ Faqat client tomonda ishlash uchun
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,12 +15,6 @@ const geistMono = Geist_Mono({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true); // ✅ Component faqat client tomonida ishlashini ta’minlaymiz
-  }, []);
-
   return (
     <html lang="en">
       <head>

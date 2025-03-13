@@ -26,7 +26,9 @@ export default function Home() {
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h1>Telegram User Info</h1>
       {user ? (
+        
         <div>
+          <pre>{JSON.stringify(user)}</pre>
           <p><strong>ID:</strong> {user.id}</p>
           <p><strong>Username:</strong> {user.username || "No username"}</p>
           <p><strong>First Name:</strong> {user.first_name}</p>
