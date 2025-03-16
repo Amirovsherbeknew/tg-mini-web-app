@@ -14,7 +14,7 @@ function ExchangeView () {
         setCount(Number(JSON.parse(localStorage.getItem('coin-count') || '0')))
     },[])
     return (
-        <div className="flex flex-col gap-[30px]">
+        <div className="flex flex-col gap-[10px]">
             <CoinsCount />
             <NumberCoins count={count}/>
             <CoinProgress/>
