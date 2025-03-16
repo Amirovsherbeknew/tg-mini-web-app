@@ -60,3 +60,16 @@ body {
 .progress-linear {
   background: linear-gradient(90deg, #ADFAA1 0%, #C597CC 45%, #2F39A3 100%);
 }
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out;
+
+
+}

@@ -9,7 +9,7 @@ export default function ClickerCoin({count, onClick }: ClickerCoinProps) {
   const handleClick = () => {
       onClick(count+1)
       setShake(true);
-      setTimeout(() => setShake(false), 100); // 200ms tebranish
+      setTimeout(() => setShake(false), 170); // 200ms tebranish
   };
 
   return (
